@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/20 16:43:06 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/21 00:55:40 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/04/23 03:13:41 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/04/23 03:13:42 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		i;
+	int		i;
+	int		cnt;
+	char	*freshString;
 
+	cnt = 0;
 	i = 0;
-	if (s != NULL)
+	freshString = NULL;
+	while (s[cnt])
+		cnt++;
+	freshString = (char *)malloc(sizeof(char) * cnt);
+	while (s[i])
 	{
-		while (s[i])
-		{
-			f(&s[i]);
-			i++;
-		}
-	}	
+		freshString[i] = f(i, s[i]);
+		i++;
+	}
+	freshString[i] = '\0';
+	return (freshString);
 }
