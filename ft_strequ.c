@@ -15,21 +15,21 @@
 int		ft_strequ(char const *s1, char const *s2)
 {
 	size_t		i;
-	size_t		cntS1;
-	size_t		cntS2;
+	size_t		cnts1;
+	size_t		cnts2;
 
 	i = 0;
-	cntS1 = 0;
-	cntS2 = 0;
-	while (s1[cntS1])
-		cntS1++;
-	while (s2[cntS2])
-		cntS2++;
-	if(cntS1 == cntS2)
+	cnts1 = 0;
+	cnts2 = 0;
+	while (s1[cnts1])
+		cnts1++;
+	while (s2[cnts2])
+		cnts2++;
+	if (cnts1 == cnts2)
 	{
 		while (s1[i])
 		{
-			if(s1[i] == s2[i])
+			if (s1[i] == s2[i])
 				i++;
 			else
 				return (0);

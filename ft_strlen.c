@@ -25,10 +25,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-// int main()
-// {
-// 	char	tab[] = "MOUAD";
-// 	printf("%zu", ft_strlen(tab));
-// 	return 0;
-// }

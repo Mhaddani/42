@@ -25,17 +25,8 @@ char	*ft_strdup(const char *s1)
 	while (s1[i])
 	{
 		cp[i] = s1[i];
-		i++;	
+		i++;
 	}
 	cp[i] = '\0';
 	return (cp);
-}
-
-
-int 	 main()
-{
-	char tab[] = "MOUAD";
-
-	printf("%s", ft_strdup(tab));
-	return 0;
 }

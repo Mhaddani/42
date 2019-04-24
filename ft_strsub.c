@@ -14,12 +14,12 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
-	char *freshSub;
-	size_t		cnt;
-	size_t		pos;
+	size_t	i;
+	char	*freshsub;
+	size_t	cnt;
+	size_t	pos;
 
-	freshSub = NULL;
+	freshsub = NULL;
 	i = 0;
 	cnt = 0;
 	pos = start + len;
@@ -27,26 +27,18 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		cnt++;
 	if (pos < cnt)
 	{
-		if ((freshSub = (char *)malloc(sizeof(char) * (len + 1))))
+		if ((freshsub = (char *)malloc(sizeof(char) * (len + 1))))
 		{
 			while (start < pos)
 			{
-				freshSub[i] = s[start];
+				freshsub[i] = s[start];
 				i++;
 				start++;
 			}
 		}
-		else 
+		else
 			return (NULL);
 	}
-	freshSub[i] = '\0';
-	return (freshSub);
-}
-
-int main()
-{
-    char t[] = "MOUAD HADDANI";
-    char t1[] = "MOUAD";
-
-    printf("%s", ft_strsub(t, 4, 6));
+	freshsub[i] = '\0';
+	return (freshsub);
 }

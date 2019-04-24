@@ -44,12 +44,3 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	}
 	return (dst);
 }
-// #include <stdio.h>
-// int main()
-// {
-// 	char tab[] = "MOUAD HADDANI";
-// 	char tab1[] = "IOP TERRE";
-
-// 	printf("%s", ft_strncpy(tab, tab1, 12));
-// 	return 0;
-// }

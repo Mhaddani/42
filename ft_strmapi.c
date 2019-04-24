@@ -16,19 +16,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	int		cnt;
-	char	*freshString;
+	char	*freshstr;
 
 	cnt = 0;
 	i = 0;
-	freshString = NULL;
+	freshstr = NULL;
 	while (s[cnt])
 		cnt++;
-	freshString = (char *)malloc(sizeof(char) * cnt);
+	freshstr = (char *)malloc(sizeof(char) * cnt);
 	while (s[i])
 	{
-		freshString[i] = f(i, s[i]);
+		freshstr[i] = f(i, s[i]);
 		i++;
 	}
-	freshString[i] = '\0';
-	return (freshString);
+	freshstr[i] = '\0';
+	return (freshstr);
 }

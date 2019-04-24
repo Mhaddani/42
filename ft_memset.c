@@ -12,25 +12,17 @@
 
 #include "libft.h"
 
-void    *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int     i;
-	unsigned char    *cool;
+	size_t			i;
+	unsigned char	*cool;
 
 	cool = (unsigned char *)b;
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
 		cool[i] = (unsigned char)c;
 		i++;
 	}
 	return (b);
-}
-
-int 	main()
-{
-	char tab[] = "MOUAD";
-	
-	printf("%s", ft_memset(tab, '$', 3));
-	return 0;
 }
