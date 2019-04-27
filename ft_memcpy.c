@@ -12,16 +12,22 @@
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restricted dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int		i;
+	char *tab;
+	char *tab1;
 
-	i = 0;
-	char *tab = (char *)dst;
-	char *tab1 = (char *)src;
-	while (i < n)
+	if(dst != NULL && src != NULL && src > dst)
 	{
-		tab[i] = tab1[i];
-		i++;
+		i = 0;
+		tab = (char *)dst;
+		tab1 = (char *)src;
+		while (i < n)
+		{
+			tab[i] = tab1[i];
+			i++;
+		}
 	}
+	return ((void *)dst);
 }
