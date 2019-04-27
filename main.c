@@ -19,12 +19,12 @@ void	ft_strclr(char *s);
 int main() {
 	char *tab = "MOUAD";
 
-	void	*ftt(char *c)
-	{
-		
-	}
+	
 
 	ft_striter(tab, ft_strclr(tab));
+
+	// printf("%s\n\n", ft_memccpy(c, tab, 'W', 6));
+	// printf("%s", memccpy(c, tab, 'W', 6));
 
 	//printf("%p\n", tab);
 //	printf("%p\n", &tab[0]);
