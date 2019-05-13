@@ -1,6 +1,6 @@
 [submodule "libft/libft_testers/42FileChecker"]
 	path = libft/libft_testers/42FileChecker
 	url = https://github.com/jgigault/42FileChecker.git
-[submodule "Libftest"]
-	path = Libftest
+[submodule "libft/libft_testers/Libftest"]
+	path = libft/libft_testers/Libftest
 	url = https://github.com/jtoty/Libftest.git
