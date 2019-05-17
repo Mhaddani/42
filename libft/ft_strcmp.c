@@ -10,4 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if(s1[i] != s2[i])
+			break;
+		i++;
+	}
+	return (s1[i] - s2[i]);;
+}
+
+int main()
+{
+	char t[] = "MOUAD";
+	char tt[] = "MOUADDpopo";
+	printf("%d", ft_strcmp(t, tt));
+	return 0;
+}

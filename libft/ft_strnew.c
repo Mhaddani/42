@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-void	ft_memalloc(size_t size);
-
 char	*ft_strnew(size_t size)
 {
 	char	*pt;
@@ -22,7 +20,7 @@ char	*ft_strnew(size_t size)
 	//pt[size] = '\0';
 	return (pt);
 }
-/*
+
 int main()
 {
 	int i = 0;
@@ -33,4 +31,4 @@ int main()
 		i++;
 	}
 	return 0;
-}*/
+}

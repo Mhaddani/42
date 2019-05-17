@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 14:00:42 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/28 14:00:43 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/13 16:12:31 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/13 16:12:32 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	int		i;
+	unsigned char	*buf1;
+	unsigned char	*buf2;
 
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	buf1 = (unsigned char *)s1;
+	buf2 = (unsigned char *)s2;
+	while (i < n)
 	{
-		if(s1[i] != s2[i])
-			break;
+		if (buf1[i] != buf2[i])
+			return (buf1[i] - buf2[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);;
+	return (0);
 }
 
 int main()
 {
-	char t[] = "MOUAD";
-	char tt[] = "MOUADD";
-	printf("%d", ft_strncmp(t, tt, 5));
+	char s1[] = "MOUAD";
+	char s2[] = "HADDANI";
+
+	printf("%d", memcmp(s1, s2, 1));
 	return 0;
 }

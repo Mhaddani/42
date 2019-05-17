@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 14:00:42 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/28 14:00:43 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/14 15:08:24 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/14 15:08:24 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	if(s != NULL)
 	{
-		if(s1[i] != s2[i])
-			break;
-		i++;
+		while (s[i])
+		{
+			if (s[i] == (char)c)
+				return ((char *)s + i);
+			i++;
+		}
 	}
-	return (s1[i] - s2[i]);;
+	return (NULL);
 }
 
 int main()
 {
-	char t[] = "MOUAD";
-	char tt[] = "MOUADD";
-	printf("%d", ft_strncmp(t, tt, 5));
+	char s1[] = "MOUADM kool";
+	char s2[] = " HADDANI";
+
+	printf("%s", ft_strchr(s1, 'D'));
 	return 0;
 }

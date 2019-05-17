@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 14:00:42 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/28 14:00:43 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/16 17:02:39 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/16 17:02:40 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_atoi(const char *str)
 {
-	int	i;
+	size_t		i;
+	int			sign;
+	int			nb;
 
+	nb = 0;
+	sign = 1;
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (ft_whitespace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if(s1[i] != s2[i])
-			break;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (s1[i] - s2[i]);;
-}
-
-int main()
-{
-	char t[] = "MOUAD";
-	char tt[] = "MOUADD";
-	printf("%d", ft_strncmp(t, tt, 5));
-	return 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+	}
+	return (nb * sign);
 }

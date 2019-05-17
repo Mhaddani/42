@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 14:00:42 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/28 14:00:43 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/13 16:05:01 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/13 16:05:02 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	int		i;
+	unsigned char	*buf;
 
-	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	buf = (unsigned char *)s;
+	if (s != NULL)
 	{
-		if(s1[i] != s2[i])
-			break;
-		i++;
+		i = 0;
+		while (buf[i] && i < n)
+		{
+			if(buf[i] == (unsigned char)c)
+				return ((void *)(buf + i));
+			i++;
+		}
 	}
-	return (s1[i] - s2[i]);;
-}
-
-int main()
-{
-	char t[] = "MOUAD";
-	char tt[] = "MOUADD";
-	printf("%d", ft_strncmp(t, tt, 5));
-	return 0;
+	return (NULL);
 }

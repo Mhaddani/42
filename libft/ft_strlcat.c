@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 14:00:42 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/28 14:00:43 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/14 14:48:18 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/14 14:48:19 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t		ds;
+	size_t		sc;
+	size_t		j;
 
-	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	ds = ft_strlen(dst);
+	sc = ft_strlen(src);
+	if (size <= ds)
+		sc = sc + size;
+	else
+		sc = sc + ds;
+	j = 0;
+	while (src[j] && ds + 1 < size)
 	{
-		if(s1[i] != s2[i])
-			break;
-		i++;
+		dst[ds] = src[j];
+		ds++;
+		j++;
 	}
-	return (s1[i] - s2[i]);;
+	dst[ds] = '\0';
+	return (sc);
 }
 
 int main()
 {
-	char t[] = "MOUAD";
-	char tt[] = "MOUADD";
-	printf("%d", ft_strncmp(t, tt, 5));
+	char s1[] = "MOUAD";
+	char s2[] = " HADDANI";
+
+	printf("%zu", ft_strlcat(s1, s2, 5));
 	return 0;
 }
