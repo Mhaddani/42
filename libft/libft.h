@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 typedef struct		s_list
 {

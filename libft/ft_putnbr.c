@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 17:16:39 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/17 17:16:41 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/19 01:45:46 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/19 01:45:47 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_putnbr(int n)
 {
-	t_list	*list;
-	
-	if (list = malloc(sizeof(t_list)))
+	if (n < 0)
 	{
-		if (content == NULL)
-		{
-			list->content = NULL;
-			list->content_size = 0;
-		}
-		else
-		{
-			if (!(list->content = malloc(content_size)))
-				return (NULL);
-			ft_memcpy(list->content, content, content_size);
-		}
-		list->next = NULL;
+		ft_putchar('-');
+		n = n * -1;
 	}
-	return (NULL);
+	if ((n / 10) > 0)
+		ft_putnbr(n / 10);
+	ft_putchar(n % 10 + 48);
 }

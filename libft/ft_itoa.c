@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/17 17:16:39 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/17 17:16:41 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/19 01:35:23 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/19 01:35:24 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+char		*ft_itoa(int n)
 {
-	t_list	*list;
-	
-	if (list = malloc(sizeof(t_list)))
+	char	*str;
+	size_t	i;
+	size_t	nbr;
+	int		sign;
+
+	nbr = n;
+	sign = 0;
+	if (n < 0)
+		sign = 1;
+	i = ft_nbrlen(n);
+	if (!(str = ft_strnew(i + sign)))
+		return (NULL);
+	if (n < 0)
 	{
-		if (content == NULL)
-		{
-			list->content = NULL;
-			list->content_size = 0;
-		}
-		else
-		{
-			if (!(list->content = malloc(content_size)))
-				return (NULL);
-			ft_memcpy(list->content, content, content_size);
-		}
-		list->next = NULL;
+		str[0] = '-';
+		nbr = -nbr;
 	}
-	return (NULL);
+	while (i > 0)
+	{
+		str[i + sign - 1] = nbr % 10 + '0';
+		nbr = nbr / 10;
+		i--;
+	}
+	return (str);
 }
