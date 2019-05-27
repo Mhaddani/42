@@ -14,13 +14,13 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*buf;
 
-	if (s1 != NULL || s2 != NULL)
+	if (s1 && s2)
 	{
 		i = 0;
-		if((buf = (char *)malloc(sizeof(char) * n + 1)))
+		if ((buf = (char *)malloc(sizeof(char) * (n + 1))))
 		{
 			while (s2[i] && i < n)
 			{
@@ -29,16 +29,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 			}
 			buf[i] = '\0';
 			ft_strcat(s1, buf);
+			free(buf);
 		}
 	}
 	return (s1);
-}
-
-int main()
-{
-	char s1[] = "MOUAD";
-	char s2[] = " HADDANI";
-
-	printf("%s", ft_strncat(s1, s2, 2));
-	return 0;
 }

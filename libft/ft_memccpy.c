@@ -12,44 +12,23 @@
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
-{
-	size_t		i;
-	size_t		found;
-	char		*sc;
-	char		*ds;
+#include "libft.h"
 
-	sc = (unsigned char *)src;
-	ds = (unsigned char *)dst;
-	if (ds != NULL && sc != NULL)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*ds;
+	unsigned char	*sc;
+
+	ds = (unsigned char*)dst;
+	sc = (unsigned char*)src;
+	i = 0;
+	while (i < n)
 	{
-		i = 0;
-		found = 0;
-		while (sc[i] && i < n)
-		{
-			if (sc[i] == (unsigned char)c)
-			{
-				found = 1;
-				break;
-			}
-			i++;
-		}
-		if (found)
-		{
-			ft_memcpy(dst, src, i + 1);
-			return ((void *)(src + i + 1));
-		}
-		else
-			ft_memcpy(dst, src, n);
+		ds[i] = sc[i];
+		if (ds[i] == (unsigned char)c)
+			return ((void*)ds + i + 1);
+		++i;
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char dest[] = "MOUAD HADDANI";
-	char src[] = "IS A BAD BOY";
-
-	printf("%s", ft_memccpy(dest, src, 'H', 10));
-	return 0;
 }

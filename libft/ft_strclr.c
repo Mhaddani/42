@@ -16,8 +16,9 @@ void	ft_strclr(char *s)
 {
 	int		i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	ft_bzero((void *)s, i);
+	if (s)
+	{
+		i = ft_strlen(s);
+		ft_bzero((void *)s, i);
+	}
 }

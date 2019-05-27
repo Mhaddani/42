@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:10:10 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/16 16:10:10 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/05/26 07:57:11 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isupper(int c)
 {
-	if((unsigned char)c > 64 && (unsigned char)c < 91)
+	if ((unsigned char)c > 64 && (unsigned char)c < 91)
 		return (1);
 	return (0);
 }

@@ -16,35 +16,19 @@ char	*ft_strtrim(char const *s)
 {
 	int		i;
 	int		j;
-	int		lastchar;
-	char	*freshcpy;
-	int		firstchar;
+	char	*str;
 
+	if (!s)
+		return (NULL);
+	j = ft_strlen(s);
 	i = 0;
-	j = 0;
-	firstchar = 0;
-	lastchar = 0;
-	freshcpy = NULL;
-	if (s != NULL)
-	{
-		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		firstchar = i;
-		while (s[i])
-		{
-			if (s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
-				lastchar = i;
-			i++;
-		}
-		i = firstchar;
-		freshcpy = (char *)malloc(sizeof(char) * (lastchar - firstchar + 2));
-		while (i <= lastchar)
-		{
-			freshcpy[j] = s[i];
-			i++;
-			j++;
-		}
-		freshcpy[j] = '\0';
-	}
-	return (freshcpy);
+	while (ft_whitespace(s[i]))
+		i++;
+	while (ft_whitespace(s[j - 1]))
+		j--;
+	if (j < i)
+		j = i;
+	if (!(str = ft_strnew(j - i)))
+		return (NULL);
+	return (ft_strncpy(str, s + i, j - i));
 }

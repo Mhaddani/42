@@ -14,26 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-
-	i = 0;
-	if(s != NULL)
+	if (s)
 	{
-		while (s[i])
+		while (*s)
 		{
-			if (s[i] == (char)c)
-				return ((char *)s + i);
-			i++;
+			if (*s == (char)c)
+				return ((char*)s);
+			s++;
 		}
+		if ((char)c == '\0')
+			return ((char*)s);
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char s1[] = "MOUADM kool";
-	char s2[] = " HADDANI";
-
-	printf("%s", ft_strchr(s1, 'D'));
-	return 0;
 }

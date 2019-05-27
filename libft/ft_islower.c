@@ -12,7 +12,7 @@
 
 int		ft_islower(int c)
 {
-	if((unsigned char)c > 96 && (unsigned char)c < 123)
+	if ((unsigned char)c > 96 && (unsigned char)c < 123)
 		return (1);
 	return (0);
 }

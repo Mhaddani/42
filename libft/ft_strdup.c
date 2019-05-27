@@ -17,16 +17,19 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*cp;
 
-	i = 0;
-	while (s1[i])
-		i++;
-	cp = (char *)malloc(i * sizeof(char));
-	i = 0;
-	while (s1[i])
+	cp = NULL;
+	if (s1)
 	{
-		cp[i] = s1[i];
-		i++;
+		i = 0;
+		i = ft_strlen(s1);
+		cp = (char *)malloc(i * sizeof(char));
+		i = 0;
+		while (s1[i])
+		{
+			cp[i] = s1[i];
+			i++;
+		}
+		cp[i] = '\0';
 	}
-	cp[i] = '\0';
 	return (cp);
 }

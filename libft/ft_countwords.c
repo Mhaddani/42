@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/13 16:05:01 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/13 16:05:02 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/05/19 09:12:58 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/05/26 07:42:36 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t		ft_countwords(char const *str, char c)
 {
-	size_t			i;
-	unsigned char	*buf;
+	size_t		i;
+	size_t		j;
 
-	buf = (unsigned char *)s;
-	if (s != NULL)
+	i = 0;
+	j = 0;
+	if (!str)
+		return (0);
+	while (str[i])
 	{
-		i = 0;
-		while (buf[i] && i < n)
-		{
-			if (buf[i] == (unsigned char)c)
-				return ((void *)(buf + i));
+		while (str[i] == c)
 			i++;
-		}
+		if ((i == 0 && str[i] != c) || (str[i] != c && str[i - 1] == c))
+			j++;
+		i++;
 	}
-	return (NULL);
+	return (j);
 }

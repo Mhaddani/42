@@ -34,12 +34,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[ds] = '\0';
 	return (sc);
 }
-
-int main()
-{
-	char s1[] = "MOUAD";
-	char s2[] = " HADDANI";
-
-	printf("%zu", ft_strlcat(s1, s2, 5));
-	return 0;
-}

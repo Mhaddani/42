@@ -16,19 +16,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	void	*buf;
 
-	buf = (void *)malloc(len * sizeof(void *));
+	buf = (void *)malloc(len * sizeof(*buf));
 	if (!buf)
 		return (NULL);
 	ft_memcpy(buf, src, len);
 	ft_memcpy(dst, buf, len);
 	free(buf);
 	return (dst);
-}
-
-int main()
-{
-	char s[] = "MOUAD QBCPNR";
-	char *s1 = s + 4;
-	printf("%s", ft_memmove(s, s1, 7));
-	return 0;
 }

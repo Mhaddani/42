@@ -17,10 +17,10 @@ char	*ft_strcat(char *s1, const char *s2)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
-	if (s1 != NULL || s2 != NULL)
+	if (s1 && s2)
 	{
+		i = 0;
+		j = 0;
 		i = ft_strlen(s1);
 		while (s2[j])
 		{
@@ -31,13 +31,4 @@ char	*ft_strcat(char *s1, const char *s2)
 		s1[i] = '\0';
 	}
 	return (s1);
-}
-
-int main()
-{
-	char s1[] = "MOUAD";
-	char s2[] = " HADDANI";
-
-	printf("%s", ft_strcat(s1, s2));
-	return 0;
 }

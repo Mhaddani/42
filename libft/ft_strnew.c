@@ -15,20 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char	*pt;
-	pt = (char *)ft_memalloc(size + 1);
-	//pt = (char*)pt1;
-	//pt[size] = '\0';
-	return (pt);
-}
 
-int main()
-{
-	int i = 0;
-	char	*c = ft_strnew(10);
-	while (c[i])
-	{
-		printf("%c", c[i]);
-		i++;
-	}
-	return 0;
+	pt = (char *)ft_memalloc(size + 1);
+	return (pt);
 }

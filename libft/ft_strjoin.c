@@ -18,6 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*concs;
 
+	concs = NULL;
 	i = 0;
 	j = 0;
 	if (s1 != NULL && s2 != NULL)

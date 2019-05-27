@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
-	unsigned char	*buf1;
-	unsigned char	*buf2;
+	size_t				i;
+	unsigned char		*buf1;
+	unsigned char		*buf2;
 
 	i = 0;
 	buf1 = (unsigned char *)s1;
@@ -28,13 +28,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-}
-
-int main()
-{
-	char s1[] = "MOUAD";
-	char s2[] = "HADDANI";
-
-	printf("%d", memcmp(s1, s2, 1));
-	return 0;
 }

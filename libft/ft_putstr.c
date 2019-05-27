@@ -12,21 +12,14 @@
 
 #include "libft.h"
 
-void  ft_putstr(char const *s)
+void	ft_putstr(char const *s)
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i])
+	i = -1;
+	if (s)
 	{
-		ft_putchar(s[i]);
-		i++;
+		while (s[++i])
+			ft_putchar(s[i]);
 	}
-}
-
-int main()
-{
-	char c[] = "MOUAD";
-	ft_putstr(c);
-	return 0;
 }
