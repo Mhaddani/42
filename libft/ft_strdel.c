@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 14:11:13 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/20 16:42:30 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 23:11:00 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

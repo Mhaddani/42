@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 20:39:30 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/27 03:30:06 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 22:50:38 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_lstlen(t_list **listhd)
 {
-	t_list *lst;
+	t_list	*lst;
 	size_t	i;
 
 	i = 0;

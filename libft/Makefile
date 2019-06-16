@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+         #
+#    By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/12 07:22:54 by mhaddani          #+#    #+#              #
-#    Updated: 2019/05/27 03:52:13 by mhaddani         ###   ########.fr        #
+#    Updated: 2019/06/15 00:56:03 by mhaddani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 FLAG = -Wextra -Werror -Wall
-SRC = ft_atoi.c ft_bzero.c ft_countwords.c ft_isacii.c ft_isalnum.c ft_isalpha.c \
+SRC = ft_atoi.c ft_bzero.c ft_countwords.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isupper.c \
 		ft_isword.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
 		ft_lstmap.c ft_lstnew.c ft_memalloc.c ft_memccpy.c ft_memchr.c \
@@ -25,21 +25,35 @@ SRC = ft_atoi.c ft_bzero.c ft_countwords.c ft_isacii.c ft_isalnum.c ft_isalpha.c
 		ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
 		ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c \
 		ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
-		ft_whitespace.c ft_lstpush.c ft_lstlen.c ft_lstpushto.c
-HEADER = *.h
-FO = *.o
+		ft_whitespace.c ft_lstpush.c ft_lstlen.c ft_lstprint.c ft_lstpushto.c
+HEADER = libft.h
+FO = ft_atoi.o ft_bzero.o ft_countwords.o ft_isalnum.o ft_isalpha.o \
+		ft_isascii.o ft_isdigit.o ft_islower.o ft_isprint.o ft_isupper.o \
+		ft_isword.o ft_itoa.o ft_lstadd.o ft_lstdel.o ft_lstdelone.o ft_lstiter.o \
+		ft_lstmap.o ft_lstnew.o ft_memalloc.o ft_memccpy.o ft_memchr.o \
+		ft_memcmp.o ft_memcpy.o ft_memdel.o ft_memmove.o ft_memset.o ft_nbrlen.o \
+		ft_putchar.o ft_putchar_fd.o ft_putendl.o ft_putendl_fd.o ft_putnbr.o \
+		ft_putnbr_fd.o ft_putstr.o ft_putstr_fd.o ft_strcat.o ft_strchr.o \
+		ft_strclr.o ft_strcmp.o ft_strcpy.o ft_strdel.o ft_strdup.o ft_strequ.o \
+		ft_striter.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlen.o \
+		ft_strmap.o ft_strmapi.o ft_strncat.o ft_strncmp.o ft_strncpy.o \
+		ft_strnequ.o ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strsplit.o \
+		ft_strstr.o ft_strsub.o ft_strtrim.o ft_tolower.o ft_toupper.o \
+		ft_whitespace.o ft_lstpush.o ft_lstlen.o ft_lstprint.o ft_lstpushto.o
 		
 all :$(NAME)
 
 $(NAME) :
-	$(CC) $(FLAG) -c $(SRC) -I $(HEADER)
-	ar rc $(NAME) $(FO)
+	@$(CC) $(FLAG) -c $(SRC) -I $(HEADER)
+	@ar rc $(NAME) $(FO)
 
 clean : 
-	rm -f $(FO)
+	@rm -f $(FO)
+
+reclean: clean
+	@rm -f $(FO)
 
 fclean : clean
-	rm -f $(NAME)
-	
-re : fclean all
+	@rm -f $(NAME)
 
+re : fclean all reclean

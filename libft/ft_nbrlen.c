@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 09:09:12 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/19 09:09:13 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/11 16:41:20 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ size_t	ft_nbrlen(int n)
 {
 	size_t	i;
 
-	i = 1;
+	i = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
-	{
 		n = -n;
-		if (n == -2147483648)
-			return (10);
-	}
-	while (n >= 10)
+	while (n != 0)
 	{
-		n = n / 10;
+		n /= 10;
 		i++;
 	}
 	return (i);

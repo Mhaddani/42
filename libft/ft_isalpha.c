@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:07:45 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/26 07:57:14 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 22:44:42 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	if (ft_isupper(c) || ft_islower(c))
-		return (1);
-	return (0);
+	return (ft_isupper(c) || ft_islower(c));
 }

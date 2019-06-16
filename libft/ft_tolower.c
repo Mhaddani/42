@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:59:52 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/16 16:59:53 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 23:10:17 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_tolower(int c)
 {
-	if (ft_isalpha((unsigned char)c))
-	{
-		if (ft_isupper((unsigned char)c))
-			return (c + 32);
-	}
-	return (c);
+	return (ft_isupper(c) ? c + 32 : c);
 }

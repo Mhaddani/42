@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 17:02:39 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/16 17:02:40 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 23:26:09 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *s)
 {
-	size_t		i;
-	int			sign;
-	int			nb;
+	int		i;
+	int		sign;
+	int		result;
 
-	nb = 0;
-	sign = 1;
 	i = 0;
-	while (ft_whitespace(str[i]))
+	sign = 1;
+	result = 0;
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		if (s[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (s[i] >= '0' && s[i] <= '9')
 	{
-		nb = nb * 10 + (str[i] - '0');
+		result = result * 10 + s[i] - '0';
 		i++;
 	}
-	return (nb * sign);
+	return (result * sign);
 }

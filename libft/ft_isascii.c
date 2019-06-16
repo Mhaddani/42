@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:44:19 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/26 07:57:16 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 22:43:43 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isascii(int c)
 {
-	if ((unsigned char)c >= 0 && (unsigned char)c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

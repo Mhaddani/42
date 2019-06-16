@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 18:26:13 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/04/26 03:43:00 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/15 01:08:36 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n != 0 && s != NULL)
-		ft_memset(s, '\0', n);
+	if (s != NULL && n != 0)
+		ft_memset(s, 0, n);
 }

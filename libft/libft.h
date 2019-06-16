@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/21 00:56:00 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/27 03:58:27 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 15:29:11 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t				ft_lstpush(t_list **list, t_list *topush);
 size_t				ft_lstpushto(t_list **list, t_list *topush, size_t pos);
 size_t				ft_lstlen(t_list **listhd);
+void				ft_lstprint(t_list *list, int size);
 int					ft_islower(int c);
 int					ft_isupper(int c);
 int					ft_whitespace(char c);

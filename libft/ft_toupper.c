@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 16:49:16 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/05/16 16:49:16 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/12 22:46:49 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_toupper(int c)
 {
-	if (ft_isalpha((unsigned char)c))
-	{
-		if (ft_islower((unsigned char)c))
-			return (c - 32);
-	}
-	return (c);
+	return ((ft_islower(c) ? c - 32 : c));
 }
