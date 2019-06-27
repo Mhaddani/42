@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaddani <mhaddani@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 20:51:51 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/06/12 23:34:21 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/27 20:50:55 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ void	ft_lstprint(t_list *list, int size)
 	lst = list;
 	while (lst && i <= size + 1)
 	{
-		printf("%s\t", lst->content);
+		ft_putstr(lst->content);
+		ft_putchar('\t');
 		if (lst->next == NULL)
-			printf("%zu", lst->content_size);
+			ft_putnbr(lst->content_size);
 		else
-			printf("%zu\n", lst->content_size);
+		{
+			ft_putnbr(lst->content_size);
+			ft_putchar('\n');
+		}
 		lst = lst->next;
 		i++;
 	}

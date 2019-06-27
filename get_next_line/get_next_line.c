@@ -6,13 +6,38 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 12:51:09 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/06/26 14:59:14 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/06/27 20:54:57 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	get_next_line(const int fd, char **line)
+int		traitement(int lb_pos, int r_size, char **rest, char **line)
+{
+	char *tmp;
+
+	if ((lb_pos = ft_strchrpos(*rest, '\n')) >= 0)
+	{
+		*line = ft_strsub(*rest, 0, lb_pos);
+		tmp = *rest;
+		*rest = ft_strdup(ft_strchr(*rest, '\n') + 1);
+		ft_strdel(&tmp);
+	}
+	else
+	{
+		*line = ft_strdup(*rest);
+		ft_strdel(rest);
+	}
+	if (r_size < 1 && !*rest && **line == '\0')
+	{
+		ft_strdel(line);
+		return (r_size);
+	}
+	else
+		return (1);
+}
+
+int		get_next_line(const int fd, char **line)
 {
 	char		buff[BUFF_SIZE + 1];
 	static char	*rest[MAX_FD];
@@ -33,23 +58,5 @@ int	get_next_line(const int fd, char **line)
 		if ((lb_pos = ft_strchrpos(rest[fd], '\n')) >= 0)
 			break ;
 	}
-	if ((lb_pos = ft_strchrpos(rest[fd], '\n')) >= 0)
-	{
-		*line = ft_strsub(rest[fd], 0, lb_pos);
-		tmp = rest[fd];
-		rest[fd] = ft_strdup(ft_strchr(rest[fd], '\n') + 1);
-		ft_strdel(&tmp);
-	}
-	else
-	{
-		*line = ft_strdup(rest[fd]);
-		ft_strdel(&rest[fd]);
-	}
-	if (r_size < 1 && !rest[fd] && **line == '\0')
-	{
-		ft_strdel(line);
-		return (r_size);
-	}
-	else
-		return (1);
+	return (traitement(lb_pos, r_size, &rest[fd], line));
 }
