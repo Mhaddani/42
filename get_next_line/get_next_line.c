@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 12:51:09 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/06/27 20:54:57 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/08/17 00:28:17 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ int		traitement(int lb_pos, int r_size, char **rest, char **line)
 
 int		get_next_line(const int fd, char **line)
 {
-	char		buff[BUFF_SIZE + 1];
+	char		*buff;
 	static char	*rest[MAX_FD];
 	int			r_size;
 	int			lb_pos;
 	char		*tmp;
 
+	if (!(buff = ft_strnew(BUFF_SIZE)))
+		return (-1);
 	lb_pos = -1;
 	INLINE_IF((fd < 0 || line == NULL || MAX_FD < fd), -1);
 	if (!(rest[fd]))
