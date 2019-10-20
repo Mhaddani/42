@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:43:22 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/10/18 16:20:45 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:52:29 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ char	*solve_fillit(char *av, int fd)
 		if ((iv = is_tet_valid(&buff, &tets_tab)) != -1 && tet_count <= 26)
 		{
 			tet_count++;
-		
 		}
 		else
-			return "error";
+			return (-1);
 	}
 	tet_solve();
 }

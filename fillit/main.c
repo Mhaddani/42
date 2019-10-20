@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 06:08:07 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/10/19 14:51:49 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/10/19 23:52:24 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		return(usage());
 	if ((fd = open(av[1], O_RDONLY)) < 0)
 		ft_putendl("The file does not exist");
-	else
-		solve_fillit(av[1], fd);
+	else if ((solve_fillit(av[1], fd)) == -1)
+		ft_putendl("error");
 	return (0);
 }
