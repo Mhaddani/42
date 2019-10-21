@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 06:08:07 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/10/21 09:13:05 by mhaddani         ###   ########.fr       */
+/*   Created: 2019/10/20 17:01:03 by mhaddani          #+#    #+#             */
+/*   Updated: 2019/10/21 08:24:06 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#ifndef FILLIT_H
+# define FILLIT_H
 
-int main(int ac, char **av)
-{
-	int fd;
+# include "libft/libft.h"
 
-	if(ac != 2)
-		return(usage());
-	if ((fd = open(av[1], O_RDONLY)) < 0)
-		ft_putendl("The file does not exist");
-	else if ((solve_fillit(fd)) == -1)
-		ft_putendl("error");
-	return (0);
-}
+int	solve_fillit(int fd);
+int		is_tet_valid(char *buff, char ***tets_tab);
+int	is_touching(char *buff, int pos);
+int	usage();
+
+#endif
