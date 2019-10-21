@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:43:22 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/10/21 12:49:19 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/10/21 13:11:37 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,20 @@ int	solve_fillit(int fd)
 		else
 			return (-1);
 	}
-	i = 0;
-	while (i <= 4)
-	{
-		int a = tets_tab[0][i];
-		ft_putnbr(a);
-		ft_putendl("");
-		i++;
-	}
-	// int ii = ft_strlen(tets_tab[i]);
-	// int jj = ft_strlen(tets_tab[i][j]);
-	// ft_putendl(tets_tab[0]);
-	// while (i < ii)
+	// i = 0;
+	// while (i < 4)
 	// {
-	// 	while (j < jj)
-	// 		{
-	// 			ft_putchar(tets_tab[i][j]);
-	// 			j++;
-	// 		}
-	// 		i++;
+	// 	j = 0;
+	// 	while (j < tet_count)
+	// 	{
+	// 		int a;
+	// 		a = tets_tab[i][j];
+	// 		ft_putnbr(a);
+	// 		write(1, "\n",1);
+	// 		j++;
+	// 	}
+	// 	i++;
+	// 	write(1, "\n",1);
 	// }
 	//tet_solve();
 	return (1);
