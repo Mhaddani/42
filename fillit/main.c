@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 06:08:07 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/10/21 10:01:36 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/11/04 18:58:10 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,13 @@ int main(int ac, char **av)
 		ft_putendl("error");
 	return (0);
 }
+
+// int main(int ac, char **av)
+// {
+// 	char *c;
+// 	int l;
+// 	c = "14";
+// 	c = &l;
+// 	printf("%s\n", c);
+// 	return 0;
+// }
