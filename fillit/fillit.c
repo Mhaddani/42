@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:43:22 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/11/04 20:39:22 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/11/20 13:46:04 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	solve_fillit(int fd)
 		else
 			return (-1);
 	}
+	// Affichage
 	i = 0;
 	int j = 0;
 	while (i < 4)

@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 06:45:37 by mhaddani          #+#    #+#             */
-/*   Updated: 2019/11/04 20:43:56 by mhaddani         ###   ########.fr       */
+/*   Updated: 2019/11/20 13:42:57 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,25 +68,23 @@ int	is_tet_valid(char *buff, char **tets_tab)
 	int	b;
 	int	min;
 	int	bool;
-	static int p;
 
 	k = 0;
 	i = 0;
 	bool = 0;
 	if ((is_form_valid(buff, tets_tab)) != -1)
 	{
-		while (tets_tab[i])
-		{
-			printf("----------- [%d] -------------\n", p);
-			min = (tets_tab[i][k] < tets_tab[i][k + 1]) ? tets_tab[i][k] : tets_tab[i][k + 1];
-			while (k < 4)
-			{
-				min = (tets_tab[i][k] < min) ? tets_tab[i][k] : min;
-				k++;
-			}
-			ft_putstr("\n");
-			ft_putnbr(min);
-			ft_putstr("\n");
+		// while (tets_tab[i])
+		// {
+		// 	min = (tets_tab[i][k] < tets_tab[i][k + 1]) ? tets_tab[i][k] : tets_tab[i][k + 1];
+		// 	while (k < 4)
+		// 	{
+		// 		min = (tets_tab[i][k] < min) ? tets_tab[i][k] : min;
+		// 		k++;
+		// 	}
+		// 	ft_putstr("\n");
+		// 	ft_putnbr(min);
+		// 	ft_putstr("\n");
 			// k = 0;
 			// while (min > 4){
 			// 	while (tets_tab[i][k])
@@ -132,9 +130,8 @@ int	is_tet_valid(char *buff, char **tets_tab)
 			// }
 			//ft_putstr("js");
 			
-			i++;
-		}
-		p++;
+		// 	i++;
+		// }
 		return (1);
 	}
 	return (-1);
