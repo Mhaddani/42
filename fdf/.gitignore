@@ -1,0 +1,8 @@
+.DS_Store
+a.out
+a.out.*
+.vscode/tasks.json
+.vscode/launch.json
+./ressources/*
+.vscode
+.vscode/*
