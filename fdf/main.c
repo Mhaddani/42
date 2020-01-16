@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 16:35:04 by mhaddani          #+#    #+#             */
-/*   Updated: 2020/01/14 16:35:29 by mhaddani         ###   ########.fr       */
+/*   Updated: 2020/01/14 22:29:52 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int		main(int ac, char **av)
 	
 	wind_dms = (int *)malloc(sizeof(int) * 6);
 	ft_memset(wind_dms, 0, 6);
-	wind_dms[0] = 1000;
-	wind_dms[1] = 1000;
+	wind_dms[0] = 1400;
+	wind_dms[1] = 1050;
 	if (ac == 2 && (av[1] != NULL))
 	{
 		if ((con = mlx_init()))

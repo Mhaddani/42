@@ -6,7 +6,7 @@
 /*   By: mhaddani <mhaddani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 19:07:20 by mhaddani          #+#    #+#             */
-/*   Updated: 2020/01/14 17:04:19 by mhaddani         ###   ########.fr       */
+/*   Updated: 2020/01/14 22:24:34 by mhaddani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	bresenham(int x0, int y0, int x1, int y1, int *img_data, int size_ln, int c
 		}
 	}
 }
-
 
 // 	int dx = x2 - x1;
 // 	int dy = y2 - y1;
